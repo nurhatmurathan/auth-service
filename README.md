@@ -13,7 +13,7 @@ This is a FastAPI-based authentication service that provides JWT authentication 
 
 ### Prerequisites
 
-- Python 3.7+
+- Python 3.9+
 - FastAPI
 - SQLAlchemy
 - Passlib
