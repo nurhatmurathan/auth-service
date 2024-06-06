@@ -9,6 +9,23 @@ This is a FastAPI-based authentication service that provides JWT authentication 
 - **Token Verification**: Endpoint to verify tokens.
 - **User Registration and Login**: Register new users and authenticate existing ones.
 
+## Project Structure
+```bash
+.
+├── auth
+│   ├── routes.py
+│   ├── utils.py
+│   ├── models.py
+│   ├── schemas.py
+│   └── services.py
+├── database.py
+├── deps.py
+├── main.py
+├── settings.py
+├── .env
+└── README.md
+```
+
 ## Getting Started
 
 ### Prerequisites
