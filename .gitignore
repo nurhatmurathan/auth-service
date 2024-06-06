@@ -1,6 +1,7 @@
 venv
 .env
 .idea
+.git
 *.pyc
 **.pyc
 /static/
