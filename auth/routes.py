@@ -6,7 +6,7 @@ from . import schemas, services, utils
 router = APIRouter()
 
 
-@router.post("/users", response_model=schemas.User, status_code=status.HTTP_201_CREATED)
+@router.post("/register", response_model=schemas.User, status_code=status.HTTP_201_CREATED)
 def register_user(user: schemas.UserCreate, db: DatabaseDep):
     db_user = services.get_user_by_email(db, email=user.email)
     if db_user:
