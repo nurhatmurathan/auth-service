@@ -27,11 +27,13 @@ This is a FastAPI-based authentication service that provides JWT authentication 
    git clone <repository_url>
    cd <repository_directory>
     ```
+   
 2. **Create a virtual environment:**:
    ```bash
     python -m venv venv
     source venv/bin/activate  # On Windows use `venv\Scripts\activate`
     ```
+   
 3. **Install dependencies:**:
    ```bash
     pip install -r requirements.txt
@@ -39,7 +41,6 @@ This is a FastAPI-based authentication service that provides JWT authentication 
 ### Configuration
 
 Create a .env file in the root directory with the following environment variables:
-
 ```env
 DB_HOST="localhost"
 DB_USER="nurha"
@@ -50,7 +51,6 @@ DB_USER_TABLE="users"
 ```
 
 ### Database Setup
-
 Ensure your PostgreSQL database is running and the credentials match those in your .env file. Create the database and user table as needed.
 
 ### Running the Application
@@ -59,6 +59,7 @@ Ensure your PostgreSQL database is running and the credentials match those in yo
    ```bash
    uvicorn main:app --reload
     ```
+   
 2. **Access the API documentation:**
    Open your browser and navigate to http://127.0.0.1:8000/docs to see the interactive API documentation provided by Swagger UI.
    
