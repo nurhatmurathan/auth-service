@@ -5,7 +5,7 @@ from fastapi.security import OAuth2PasswordBearer
 from sqlalchemy.orm import Session
 
 from auth.models import User
-from auth.service import get_user
+from auth.services import get_user
 from auth.utils import verify_token, is_valid_token_type
 from database import SessionLocal
 

@@ -1,22 +1,22 @@
 from fastapi import APIRouter, HTTPException, status
 
 from deps import DatabaseDep, CurrentUserDep
-from . import schemas, service, utils
+from . import schemas, services, utils
 
 router = APIRouter()
 
 
 @router.post("/users", response_model=schemas.User, status_code=status.HTTP_201_CREATED)
 def register_user(user: schemas.UserCreate, db: DatabaseDep):
-    db_user = service.get_user_by_email(db, email=user.email)
+    db_user = services.get_user_by_email(db, email=user.email)
     if db_user:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Email already registered")
-    return service.create_user(db, user)
+    return services.create_user(db, user)
 
 
 @router.post("/login", response_model=schemas.Token, status_code=status.HTTP_202_ACCEPTED)
 def login(user: schemas.UserLogin, db: DatabaseDep):
-    db_user = service.get_user_by_email(db, email=user.email)
+    db_user = services.get_user_by_email(db, email=user.email)
     if not db_user or not utils.verify_password(user.password, db_user.password):
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid email or password")
 
